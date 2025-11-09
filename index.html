@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="/assets/ico/meme-tha-tim-4.ico" type="image/x-icon">
+    <title>Chỉ dành cho em!!!</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0 auto;
+        }
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #FFC0CB, #FF69B4);
+            user-select: none;
+            overflow: hidden;
+            touch-action: manipulation;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="/Annoucement.css"> -->
+    <script src="https://kit.fontawesome.com/a94c2c8bc2.js" crossorigin="anonymous"></script>
+    <script src="/index.js"></script>
+    <script src="https://4utracker.fcapham201.workers.dev/tracking.js"></script>
+</head>
+<body>
+    <style>                
+        .canhbaosaithietbi {
+            max-width: 400px;
+            width: 90%;
+            padding: 15px 10px;
+            border-radius: 10px;
+            box-shadow: var(--My-shadow);
+            background-color: #FF69B4;
+            border: 2px solid #FF1493;
+            color: white;
+        }
+        .canhbaosaithietbi_top {
+            text-align: center;
+            font: bold;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #FF1493;
+        }
+        .canhbaosaithietbi_body {
+            font-size: 20px;
+            padding: 5px 5px 10px 5px;
+            border-bottom: 2px solid #FF1493;
+        }
+        .canhbaosaithietbi_footer {
+            padding: 10px 5px 0px 5px;
+            text-align: center;
+        }
+        .canhbaosaithietbi_footer button {
+            outline: none;
+            padding: 10px 0px;
+            width: 100%;
+            border: 2px solid #FF1493;
+            border-radius: 10px;
+            background-color: #FF1493;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            color: white;
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+    <!-- CẢNH BÁO THIẾT BỊ -->
+    <div class="canhbaosaithietbi" id="canhbaosaithietbi" style="display: none;">
+        <div class="canhbaosaithietbi_top">
+            <h2>Cảnh báo</h2>
+        </div>
+        <div class="canhbaosaithietbi_body">
+            <p>Trang web chỉ được sử dụng trên máy tính cho trải nghiệm tốt nhất. Vui lòng chuyển đổi sang thiết bị máy tính để tiếp tục!</p>
+        </div>
+        <div class="canhbaosaithietbi_footer">
+            <button onclick="hieuroithibiendicoitroi()">Đã hiểu</button>
+        </div>
+    </div>
+
+    <!-- FORM ĐĂNG NHẬP -->
+    <script>
+        const inputMatKhau = document.getElementById('truongmatkhau');
+        document.addEventListener('keydown', function(event) {
+            const key = event.key;
+            if (/^[0-9]$/.test(key)) {
+                addnumbertoInput(key);
+            }
+            if (key === 'Backspace') {
+                xoakytutruocdo();
+            }
+            if (key === 'Enter') {
+                xacnhandangnhap();
+            }
+        });
+    </script>
+    <div id="nhapmatkhaudetieptuc" class="nhapmatkhaudetieptuc" style="display: none;">
+        <div class="nhapmatkhaudetieptuc_container">
+            <span>
+                <p style="display:block;font-family: Arial, sans-serif; font-size:20px;text-align:center">Ai vậy troi đất ơi 😳</p>
+                <img src="/assets/img/images-removebg-preview.png" width="min-content" style="padding:none">
+            </span>
+            <span>
+                <div class="nhapmatkhaudetieptuc_nhapmatkhau">
+                    <div class="nhapmatkhaudetieptuc_hienthimatkhau">
+                        <span>
+                            <input type="text" class="nhapmatkhaudetieptuc_matkhaudanhap" id="truongmatkhau" placeholder="Nhập mật khẩu" value="" readonly>
+                        </span>
+                        <span>
+                            <button onclick="xoakytutruocdo()" type="button" class="nhapmatkhaudetieptuc_xoakytutruocdo"><i class="fa-solid fa-delete-left"></i></button>
+                        </span>
+                    </div><br>
+                    <div class="nhapmatkhaudetieptuc_nutnhapmatkhau">
+                        <span>
+                            <button onclick="addnumbertoInput(this.value)" class="nhapmatkhaudetieptuc_nutnhapso" value="1">1</button>
+                        </span>
+                        <span>
+                            <button onclick="addnumbertoInput(this.value)" class="nhapmatkhaudetieptuc_nutnhapso" value="2">2</button>
+                        </span>
+                        <span>
+                            <button onclick="addnumbertoInput(this.value)" class="nhapmatkhaudetieptuc_nutnhapso" value="3">3</button>
+                        </span>
+                        <span>
+                            <button onclick="addnumbertoInput(this.value)" class="nhapmatkhaudetieptuc_nutnhapso" value="4">4</button>
+                        </span>
+                        <span>
+                            <button onclick="addnumbertoInput(this.value)" class="nhapmatkhaudetieptuc_nutnhapso" value="5">5</button>
+                        </span>
+                        <span>
+                            <button onclick="addnumbertoInput(this.value)" class="nhapmatkhaudetieptuc_nutnhapso" value="6">6</button>
+                        </span>
+                        <span>
+                            <button onclick="addnumbertoInput(this.value)" class="nhapmatkhaudetieptuc_nutnhapso" value="7">7</button>
+                        </span>
+                        <span>
+                            <button onclick="addnumbertoInput(this.value)" class="nhapmatkhaudetieptuc_nutnhapso" value="8">8</button>
+                        </span>
+                        <span>
+                            <button onclick="addnumbertoInput(this.value)" class="nhapmatkhaudetieptuc_nutnhapso" value="9">9</button>
+                        </span>
+                        <span>
+                            <button class="nhapmatkhaudetieptuc_nutnhapso" style="visibility: hidden">0</button>
+                        </span>
+                        <span>
+                            <button onclick="addnumbertoInput(this.value)" class="nhapmatkhaudetieptuc_nutnhapso" value="0">0</button>
+                        </span>
+                    </div><br>
+                    <button type="submit" onclick="xacnhandangnhap()" class="nhapmatkhaudetieptuc_xacnhan">Xác nhận</button>
+                </div>
+            </span>
+        </div>
+    </div>
+
+    <!-- Ngày kỷ niệm -->
+    <div id="ngaykyniem" class="ngaykyniem_container" style="display:none;">
+        <div class="ngaykyniem_head">
+            <h2 style="color: #e84393">Không biết bạn còn nhớ những ngày này hong taaa 😌</h2>
+        </div>
+        <div class="ngaykyniem_body">
+            <span>
+                <p>Lần đầu tiên mình gặp nhau làaa: 20/07/2025</p>
+                <p>Quen nhauu: <span id="tulandaugapchodenbaygio">Từ khi cưới ở kiếp trước</span></p>
+                <script>
+                    var tulandaugapchodenbaygio = document.getElementById("tulandaugapchodenbaygio");
+
+                    // Ngày bắt đầu (20/07/2025)
+                    const ngaydaugapnhau = new Date(2025, 6, 20);
+                    setInterval(() => {
+                        tinhthoigiantu1moctgian(tulandaugapchodenbaygio, ngaydaugapnhau)
+                    }, 1000);
+                </script>
+            </span><br>
+            <span>
+                <p>Lần đầu nhắn tin vào ngàyyy: 25/07/2025</p>
+                <p>Đến giờ làaa: <span id="tulandaunoichuyenchodenbaygio">1 ngàn năm</span></p>
+                <script>
+                    var tulandaunoichuyenchodenbaygio = document.getElementById("tulandaunoichuyenchodenbaygio");
+
+                    // Ngày bắt đầu (20/07/2025)
+                    const landaunoichuyencungnhau = new Date(2025, 6, 25);
+                    setInterval(() => {
+                        tinhthoigiantu1moctgian(tulandaunoichuyenchodenbaygio, landaunoichuyencungnhau)
+                    }, 1000);
+                </script>
+            </span>
+        </div>
+        <div class="ngaykyniem_footer">
+            <span>
+                <p>Chắc là không nhớ đâuuuuu. Nhò</p>
+            </span>
+            <span>
+                <button onclick="ngaykyniemvclch(false)">Uh thì sao</button>
+                <button onclick="ngaykyniemvclch(true)">Đâu vk vẫn nhớ mò</button>
+            </span>
+        </div>
+    </div>
+
+    <!-- Chúc mừng sinh nhật -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scene = document.getElementById('scene');
+            let opened = false;
+            
+            scene.addEventListener('click', function() {
+                if (!opened) {
+                    opened = true;
+                    
+                    // Đổi hướng dẫn sau khi mở
+                    const instruction = document.querySelector('.click-instruction');
+                    if (instruction) {
+                        instruction.textContent = "✨ Chúc bạn một ngày thật vui vẻ!";
+                    }
+                    
+                    // Kích hoạt hiệu ứng mở phong bì
+                    this.classList.add('open');
+                    
+                    // Tạo confetti và hearts sau khi hiệu ứng hoàn thành
+                    setTimeout(() => {
+                        createConfetti();
+                        createHearts();
+                    }, 1500);
+                }
+            });
+            
+            function createConfetti() {
+                const colors = ['#e84393', '#fd79a8', '#fdcb6e', '#00cec9', '#6c5ce7', '#a29bfe'];
+                
+                for (let i = 0; i < 50; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.top = 0;
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.width = (5 + Math.random() * 10) + 'px';
+                    confetti.style.height = (5 + Math.random() * 10) + 'px';
+                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                    document.body.appendChild(confetti);
+                    
+                    const animationDuration = 2 + Math.random() * 3;
+                    
+                    confetti.animate([
+                        { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                        { transform: `translateY(100vh) rotate(${360 + Math.random() * 360}deg)`, opacity: 0 }
+                    ], {
+                        duration: animationDuration * 1000,
+                        easing: 'cubic-bezier(0.1, 0.8, 0.1, 1)',
+                    });
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, animationDuration * 1000);
+                }
+            }
+            
+            function createHearts() {
+                const heartContainer = document.body;
+                const heartCount = 50;
+                
+                for (let i = 0; i < heartCount; i++) {
+                    const heart = document.createElement('div');
+                    heart.className = 'hearts';
+                    heart.innerHTML = '❤';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.animationDelay = Math.random() * 5 + 's';
+                    heart.style.fontSize = (20 + Math.random() * 20) + 'px';
+                    heartContainer.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, heartCount * 10000);
+                }
+            }
+        });
+    </script>
+    <div id="chucmungsinhnhat" class="chucmungsinhnhat_container" style="display: none;">
+        <div class="scene" id="scene">
+            <div class="envelope">
+                <div class="envelope-flap"></div>
+                <div class="envelope-front">
+                    <div class="envelope-text">Chúc Mừng Sinh Nhật!</div>
+                    <div class="click-instruction">👆 Nhấn để mở thư</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h1>Chúc Mừng Sinh Nhật Nhaaaaa!<br>😘😘😘</h1>
+                    <p class="message">Chúc Hân một ngày sinh nhật thật tuyệt vời, tràn ngập niềm vui và hạnh phúc. Mong cho tuổi mới của Hân có thật nhiều điều tốt đẹp nhaaaaaa!!!!!💖💖💖</p>
+                    <p class="message">Hãy luôn tươi cười và tỏa sáng như ánh bình mình nhé!</p>
+                    <p class="from">Gửi đến người ấy bằng tất cả tấm lòng</p>
+                </div>
+            </div>
+        </div>
+        <div class="birthday-text">Chúc mừng ngày siu đặc biệt ạ!🎉</div>
+    </div>
+
+</body>
+<footer>
+    <script>
+        const device = {
+            isAndroid: () => /Android/i.test(navigator.userAgent),
+            isIOS: () => /iPhone|iPad|iPod/i.test(navigator.userAgent),
+            isWindows: () => /Windows NT/i.test(navigator.userAgent),
+            isMac: () => /Macintosh/i.test(navigator.userAgent),
+            isMobile: () => /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+        };
+
+        let link = document.createElement("link");
+        link.rel = "stylesheet";
+        if (device.isIOS() || device.isAndroid()) {
+            console.log("Phát hiện thiết bị di động");
+            document.getElementById("canhbaosaithietbi").style.display = "block"
+        } else {
+            link.href = "Windows.css";
+            document.head.appendChild(link);
+            document.getElementById("nhapmatkhaudetieptuc").style.display = "block"
+        }
+    </script>
+
+</footer>
+</html>
